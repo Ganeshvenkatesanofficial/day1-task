@@ -1,0 +1,117 @@
+1.Write a blog on Difference between HTTP1.1 vs HTTP2
+
+HTTP stands for hypertext transfer protocol & it is used in client-server communication. By using HTTP user sends the request to the server & the server sends the response to the user. There are several stages of development of HTTP but we will focus mainly on HTTP/1.1 which was created in 1997 & the new one is HTTP/2 which was created in 2015.
+
+HTTP/1.1: For better understanding, let’s assume the situation when you make a request to the server for the geeksforgeeks.html page & server responds to you as a resource geeksforgeeks.html page. before sending the request and the response there is a TCP connection established between client & server. again you make a request to the server for image img.jpg & the server gives a response as an image img.jpg. the connection was not lost here after the first request because we add a keep-alive header which is the part of the request so there is an open connection between the server & client. there is a persistent connection which means several requests & responses are merged in a single connection. These are the drawbacks that lead to the creation of HTTP/2: The first problem is HTTP/1.1 transfer all the requests & responses in the plain text message form. The second one is head of line blocking in which TCP connection is blocked all other requests until the response does not receive. all the information related to the header file is repeated in every request.
+
+HTTP/2: HTTP/2 was developed over the SPDY protocol. HTTP/2 works on the binary framing layer instead of textual that converts all the messages in binary format. it works on fully multiplexed that is one TCP connection is used for multiple requests. HTTP/2 uses HPACK which is used to split data from header. it compresses the header. The server sends all the other files like CSS & JS without the request of the client using the PUSH frame.
+
+2.Write a blog about objects and its internal representation in Javascript?
+
+JavaScript, as a beginner, can seem a bit puzzling when you encounter its objects. But fear not, objects are at the heart of JavaScript, and once you grasp them, you'll have a key tool in your coding belt. Let's break it down simply.
+
+What's an Object?
+In everyday terms, an object is something that has properties and can do stuff. In JavaScript, an object is like a container that holds information (properties) and can perform actions (methods). Imagine a toy car: it has properties like color, size, and brand, and it can do things like move and honk its horn. That's an object!
+
+Creating Objects:
+
+There are two common ways to create objects in JavaScript: using object literals and constructors.
+
+Object Literals: This is like creating an object on the spot. You define its properties with curly braces {}.
+
+const person = {
+  name: "Alice",
+  age: 25,
+};
+
+Constructors:
+
+ This is like building an object based on a blueprint. You use a constructor function and the new keyword.
+
+function Car(make, model) {
+  this.make = make;
+  this.model = model;
+}
+
+const myCar = new Car("Toyota", "Camry");
+
+
+Demystifying Objects in JavaScript for Beginners
+
+JavaScript, as a beginner, can seem a bit puzzling when you encounter its objects. But fear not, objects are at the heart of JavaScript, and once you grasp them, you'll have a key tool in your coding belt. Let's break it down simply.
+
+What's an Object?
+In everyday terms, an object is something that has properties and can do stuff. In JavaScript, an object is like a container that holds information (properties) and can perform actions (methods). Imagine a toy car: it has properties like color, size, and brand, and it can do things like move and honk its horn. That's an object!
+
+Creating Objects
+There are two common ways to create objects in JavaScript: using object literals and constructors.
+
+Object Literals: This is like creating an object on the spot. You define its properties with curly braces {}.
+
+javascript
+Copy code
+const person = {
+  name: "Alice",
+  age: 25,
+};
+Constructors: This is like building an object based on a blueprint. You use a constructor function and the new keyword.
+
+javascript
+Copy code
+function Car(make, model) {
+  this.make = make;
+  this.model = model;
+}
+
+const myCar = new Car("Toyota", "Camry");
+
+Key Terms to Know
+
+Now, let's get to some key terms you'll encounter when dealing with objects:
+
+Properties:
+
+ These are like the characteristics or attributes of an object. In the toy car example, color, size, and brand are properties. You access them with a dot or square brackets.
+
+console.log(person.name); // "Alice"
+console.log(myCar["make"]); // "Toyota"
+
+Methods: 
+
+These are like the actions an object can perform. For instance, in a car object, driving and honking could be methods.
+
+const car = {
+  make: "Ford",
+  model: "Mustang",
+  drive: function() {
+    console.log("Vroom vroom!");
+  },
+};
+
+car.drive(); // "Vroom vroom!"
+
+Prototype: 
+
+This is like a blueprint or template for objects. It's used for inheritance, a fancy way of saying that one object can be based on another object's blueprint.
+
+Hidden Classes:
+
+ This is more of an advanced concept, but it's about how JavaScript engines optimize objects for speed. Just know that behind the scenes, objects can be optimized for better performance.
+
+Cloning Objects
+
+Remember that objects are like references. If you copy an object, you're actually copying a reference to it, not creating a new object. To make a real copy, you can use the spread operator ... or the Object.assign() method:
+
+const original = { prop: "value" };
+const copy = { ...original };
+
+Final Thoughts
+
+Objects are fundamental to JavaScript, and they'll pop up in almost every program you write. So, start small, practice, and as you get comfortable, you'll discover how versatile and powerful they can be. In time, you'll use objects to build amazing programs and bring your coding skills to a whole new level. Happy coding!
+
+
+
+
+
+
+
